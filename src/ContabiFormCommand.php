@@ -111,13 +111,17 @@ class ContabiFormCommand extends Command
 		
 		$filesystem = new Filesystem;
 
-        collect($filesystem->allFiles(__DIR__.'/../stubs/views'))
+        
+			
+		collect($filesystem->allFiles(__DIR__.'/../stubs/views'))
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    resource_path('contabiform')
+					$this->getViewPath('contabiform')
+					
                 );
             });
+			
 		$this->info("views created.");	
 		
     }
