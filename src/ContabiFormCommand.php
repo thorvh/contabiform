@@ -115,7 +115,7 @@ class ContabiFormCommand extends Command
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    resource_path('views/contabiform')
+                    resource_path('contabiform')
                 );
             });
 		$this->info("views created.");	
