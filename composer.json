@@ -1,7 +1,6 @@
 {
     "name": "badore/contabi_form",
-    "description": "Laravel easy form manager",
-    "type": "package",
+    "description": "Laravel easy form manager",	 
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -13,19 +12,15 @@
             "name": "Tore Vacca (thorvh)"
         }
     ],
-	"extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        },
+	"extra": {        
         "laravel": {
             "providers": [
                 "Badore\\ContabiForm\\ContabiFormServiceProvider"
-            ],
-			"dont-discover": [
-				"*"
-			]
+            ]
         }
     },
-    "minimum-stability": "dev",
-    "require": {}
+	"minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2"
+    }   
 }
