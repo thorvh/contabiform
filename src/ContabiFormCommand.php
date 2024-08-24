@@ -102,7 +102,7 @@ class ContabiFormCommand extends Command
     {
        
 		$directories = [
-            'views/contabiform',
+            'contabiform',
         ];
 
         foreach ($directories as $directory) {
