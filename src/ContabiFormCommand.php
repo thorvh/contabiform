@@ -100,7 +100,7 @@ class ContabiFormCommand extends Command
      */
     protected function exportViews()
     {
-		$origine = __DIR__.'/../stubs/views');
+		$origine = __DIR__.'/../stubs/views';
 		$destinazione =  resource_path('contabiform');
 		$this->copyDirectory($origine, $destinazione);
 					
