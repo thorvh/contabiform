@@ -5,17 +5,19 @@ namespace Badore\ContabiForm;
 
 class ContabiForm {
 	
-	/**
+     /**
      * Create a new controller instance.
      *
      * @return void
      */
-	public function __construct($type=null)
+    public function __construct($type=null)
     {
        $this->type = $type;
     }
 	
-	
+    public function test(){
+	    return 'test';
+    }
 	/**
      * Open form.
      *
