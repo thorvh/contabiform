@@ -7,7 +7,6 @@
         "psr-4": {
             "Badore\\ContabiForm\\": "src/"
         }
-		
     },
     "authors": [
         {
@@ -21,7 +20,10 @@
         "laravel": {
             "providers": [
                 "Badore\\ContabiForm\\ContabiFormServiceProvider"
-            ]
+            ],
+			"dont-discover": [
+				"*"
+			]
         }
     },
     "minimum-stability": "dev",
