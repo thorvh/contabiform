@@ -1,4 +1,4 @@
 <div class="{{$div}}">
-	@include('contabimanager.form.'.$view)
+	@include('contabiform.'.$view)
 </div>
 
