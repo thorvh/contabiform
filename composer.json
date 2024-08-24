@@ -1,19 +1,31 @@
 {
     "name": "badore/contabi_form",
     "description": "Laravel easy form manager",
-    "type": "library",
+    "type": "package",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Badore\\ContabiForm\\": "src/"
-        }
-		
+        },
+		"classmap": [
+		  "src/xx.php"
+		]
     },
     "authors": [
         {
             "name": "Tore Vacca (thorvh)"
         }
     ],
+	"extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Badore\\ContabiForm\\ContabiFormServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
