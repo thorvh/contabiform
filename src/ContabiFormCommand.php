@@ -100,55 +100,59 @@ class ContabiFormCommand extends Command
      */
     protected function exportViews()
     {
-       
-		$directories = [
-            'contabiform',
-        ];
-
-        foreach ($directories as $directory) {
-            $this->createDirectory($this->getViewPath($directory));
-        }
-		
-		$filesystem = new Filesystem;
-
-        
-			
-		collect($filesystem->allFiles(__DIR__.'/../stubs/views'))
-            ->each(function (SplFileInfo $file) use ($filesystem) {
-                $filesystem->copy(
-                    $file->getPathname(),
-					$this->getViewPath('contabiform')
+		$origine = __DIR__.'/../stubs/views');
+		$destinazione =  resource_path('contabiform');
+		$this->copyDirectory($origine, $destinazione);
 					
-                );
-            });
-			
-		$this->info("views created.");	
-		
+		$this->info("views created.");			
     }
 
     
 
-
-	
-	
-
-    /**
-     * Get full view path relative to the application's configured view path.
+	/**
+     * Copia ricorsivamente i file e le cartelle da una directory di origine a una di destinazione.
      *
-     * @param  string  $path
-     * @return string
+     * @param string $src Percorso della cartella di origine
+     * @param string $dst Percorso della cartella di destinazione
+     * @return bool
      */
-    protected function getViewPath($path)
+    public function copyDirectory($src, $dst)
     {
-        return implode(DIRECTORY_SEPARATOR, [
-            config('view.paths')[0] ?? resource_path('views'), $path,
-        ]);
+        // Verifica se la directory di origine esiste
+        if (!file_exists($src)) {
+            return response()->json(['error' => 'La directory di origine non esiste.'], 404);
+        }
+
+        // Se la cartella di destinazione non esiste, creala
+        if (!file_exists($dst)) {
+            mkdir($dst, 0755, true); // Crea la directory con permessi ricorsivi
+        }
+
+        // Apri la directory di origine
+        $dir = opendir($src);
+
+        // Scorri tutti i file e le cartelle nella directory
+        while (($file = readdir($dir)) !== false) {
+            // Ignora i riferimenti alla directory corrente (.) e alla directory superiore (..)
+            if ($file != '.' && $file != '..') {
+                $srcFilePath = $src . DIRECTORY_SEPARATOR . $file;
+                $dstFilePath = $dst . DIRECTORY_SEPARATOR . $file;
+
+                // Se è una directory, effettua una chiamata ricorsiva
+                if (is_dir($srcFilePath)) {
+                    $this->copyDirectory($srcFilePath, $dstFilePath); // Copia ricorsivamente
+                } else {
+                    // Copia il file nella destinazione
+                    copy($srcFilePath, $dstFilePath);
+                }
+            }
+        }
+
+        // Chiudi la directory di origine
+        closedir($dir);
+
+        return true;
     }
-	
-	
-	
-	
-	
 	
     
 }
