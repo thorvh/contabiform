@@ -41,7 +41,7 @@ class ContabiFormCommand extends Command
     public function handle()
     {
         //progressbar
-		$bar = $this->output->createProgressBar(2);
+		$bar = $this->output->createProgressBar(3);
  
 		$bar->start();
 		//
@@ -50,7 +50,7 @@ class ContabiFormCommand extends Command
         
 		$this->exportViews();
 		$bar->advance();
-
+		$bar->advance();
         		
 		$bar->finish();
 			
@@ -103,7 +103,7 @@ class ContabiFormCommand extends Command
 		$origine = __DIR__.'/../stubs/views';
 		$destinazione =  resource_path('views/contabiform');
 		$this->copyDirectory($origine, $destinazione);
-					
+		$this->info(".");			
 		$this->info("views created.");			
     }
 

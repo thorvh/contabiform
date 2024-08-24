@@ -27,7 +27,7 @@ class ContabiForm {
 		if($this->type == 'inline'){
 			$class = ' row row-cols-lg-auto g-3 align-items-center ';
 		}
-		return view('contabimanager.form.form-open',compact('url','class','method'));
+		return view('contabiform.form-open',compact('url','class','method'));
 	}
 	
 	
@@ -38,7 +38,7 @@ class ContabiForm {
      */
 	public function close(){
 		
-		return view('contabimanager.form.form-close');
+		return view('contabiform.form-close');
 	}
 	
 	
@@ -163,7 +163,7 @@ class ContabiForm {
 			$div = 'mb-3 col-md-'.$lenght;
 		}
 		
-		return view('contabimanager.form.form-item',compact('view','div','input','required','lenght','input_array'));
+		return view('contabiform.form-item',compact('view','div','input','required','lenght','input_array'));
 	}
 	
 	
@@ -176,7 +176,7 @@ class ContabiForm {
 	
 	public function row(){
 		
-		return view('contabimanager.form.form-row-open');
+		return view('contabiform.form-row-open');
 	}
 	
 	/**
@@ -187,7 +187,7 @@ class ContabiForm {
      */
 	public function rowclose(){
 		
-		return view('contabimanager.form.form-row-close');
+		return view('contabiform.form-row-close');
 	}
 	
 	
@@ -204,6 +204,6 @@ class ContabiForm {
 			$class = 'class="col-12"';
 		}
 				
-		return view('contabimanager.form.form-button',compact('class','name','color'));
+		return view('contabiform.form-button',compact('class','name','color'));
 	}
 }
