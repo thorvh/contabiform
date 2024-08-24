@@ -45,10 +45,12 @@ class ContabiFormCommand extends Command
  
 		$bar->start();
 		//
+		$origine = __DIR__.'/../stubs/views';
+		$destinazione =  resource_path('views/contabiform');
 		
 		$bar->advance();
         
-		$this->exportViews();
+		$this->exportViews($origine, $destinazione);
 		$bar->advance();
 		$bar->advance();
         		
@@ -59,49 +61,18 @@ class ContabiFormCommand extends Command
         $this->info('ContabiForm scaffolding generated successfully. ');
     }
 
-    /**
-     * Create the directories for the files.
-     *
-     * @return void
-     */
-    protected function ensureDirectoriesExist()
-    {
-		$directories = [
-            
-			app_path('contabiform'),
-        ];
-
-        foreach ($directories as $directory) {
-            $this->createDirectory($directory);
-        }
-		$this->info(".");
-		$this->info("Directory create.");
-    }
+    
 
 
-	/**
-     * Create a directory if it doesn't exist.
-     *
-     * @param  string  $path
-     * @return void
-     */
-    protected function createDirectory($path)
-    {
-        if (!is_dir($path)) {
-            mkdir($path, 0755, true);           
-        }
-    }
-	
 	
     /**
      * Export the authentication views.
      *
      * @return void
      */
-    protected function exportViews()
+    protected function exportViews($origine, $destinazione)
     {
-		$origine = __DIR__.'/../stubs/views';
-		$destinazione =  resource_path('views/contabiform');
+		
 		$this->copyDirectory($origine, $destinazione);
 		$this->info(".");			
 		$this->info("views created.");			
