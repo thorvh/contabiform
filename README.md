@@ -34,25 +34,25 @@ use Badore\ContabiForm\ContabiForm;
 class DoctorController extends Controller
 {
    	
-	public function create(){
+	public function create()}}{
 		
-		$form = new ContabiForm('row');
+		{{$form = new ContabiForm('row')}};
 		
-		return view('doctor.create',compact('form'));
+		return view('doctor.create',compact('form'))}};
 	}
 ```
 
 ##### Form View example
 
 ```bash
-$form->open('POST','doctors.store')
-     $form->input('name', 'required', 3) 
-	 $form->input('address', null, 4) 
-	 $form->inputData('date', null, 1) 
-	 $form->inputMoney('amount', null, 1) 
-	 $form->select('city', array(), required , 2) 
-	 $form->button('Save', 'success')
-$form->close() 
+{{$form->open('POST','doctors.store')}}
+     {{$form->input('name', 'required', 3)}} 
+	 {{$form->input('address', null, 4)}} 
+	 {{$form->inputData('date', null, 1)}} 
+	 {{$form->inputMoney('amount', null, 1)}} 
+	 {{$form->select('city', $cities_array, required , 2)}} 
+	 {{$form->button('Save', 'success')}}
+{{$form->close()}} 
 ```
 
 Select your form `new ContabiForm('horizontal')` 
@@ -60,53 +60,53 @@ Select your form `new ContabiForm('horizontal')`
 `new ContabiForm('row')`
 
 View
-`$form->open('POST','route')`
+`{{$form->open('POST','route')}}`
 
 ### Methods
 ##### Start the form in your blade view file
-`$form->open('POST','doctors.store')`      `$form->open('GET','doctors.store')`    
+`{{$form->open('POST','doctors.store')}}`      `{{$form->open('GET','doctors.store')}}`    
 
 ##### Input text
-`$form->input('title', 'required', 4)`      
-Params: ['title'] (also included for `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
+`{{$form->input('title', 'required', 4)}}`      
+Params: ['title'] (also included for `label`, `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
 
 ##### input Date (require bootstrap datepicker)
-`$form->inputData('data', null, 1)` 
+`{{$form->inputData('data', null, 1)}}` 
 
 ##### input money (number)
-`$form->inputMoney('importo', null, 1)` //money es: 125,00
+`{{$form->inputMoney('importo', null, 1)}}` //money es: 125,00
 
 ##### input file
-`$form->file('file', 'required')`
+`{{$form->file('file', 'required')}}`
 
 ##### input email
-`$form->email('email', required , 4)` 
+`{{$form->email('email', required , 4)}}` 
 
 ##### input select
-`$form->select('titolo', array(), required , 2)` 
+`{{$form->select('titolo', array(), required , 2)}}` 
 
 Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 
 ##### input
-`$form->textarea('testo', required)` 
+`{{$form->textarea('testo', required)}}` 
 
 ##### Form row example
 
 ```bash
-$form->row() // start row
-     $form->input('address', 'required', 3) 
-	 $form->inputData('date', null, 1) 
-	 $form->inputMoney('amount', null, 1) 
-	 $form->select('cities', array(), required , 2) 
-$form->rowclose() // close row
+{{$form->row() // start row
+     {{$form->input('address', 'required', 3)}} 
+	 {{$form->inputData('date', null, 1)}} 
+	 {{$form->inputMoney('amount', null, 1)}} 
+	 {{$form->select('city', $cities_array, required , 2)}} 
+{{$form->rowclose()}} // close row
 ```
 
 #####  Button
-`$form->button('Save', 'success')` 
+`{{$form->button('Save', 'success')}}` 
 
 Params: ['title'], ['bootstrap color: success, info, warning, danger, dark, light']
 
 ##### Form close
-`$form->close()` 
+`{{$form->close()}}` 
 
 
