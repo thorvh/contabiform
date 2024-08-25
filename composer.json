@@ -4,7 +4,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Badore\\ContabiForm\\": "src/"
+            "Badore\\ContabiForm\\": "src/",
+			"Badore\\Contabi\\Form\\": "form-backend/"
         }
     },
     "authors": [
