@@ -77,13 +77,12 @@ Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 `$form->textarea('testo', required)` 
 
 ##### Form row example
-`new Form('row')`
 
-`$form->row()` // start row
-
-     `$form->input('address', 'required', 3)` 
-	 
-`$form->rowclose()` // close row
+```bash
+$form->row() // start row
+     $form->input('address', 'required', 3) 	 
+$form->rowclose() // close row
+```
 
 #####  Button
 `$form->button('Save', 'success')` 
