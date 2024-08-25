@@ -49,6 +49,33 @@ Select your form `new ContabiForm('horizontal')`
 View
 `$form->open('POST','route')`
 
+### Methods
+
+`$form->open('POST','route')`      `$form->open('GET','route')`     // start the form
+
+`$form->input('nome', 'required', 4)`      //input text
+per tutti i campi input i valori sono: ['titolo'], ['required' -o- 'null'], [lunghezza: es 4]
+
+`$form->inputData('data', null, 1)` //data con bootstrap datepicker
+`$form->inputMoney('importo', null, 1)` //money es: 125,00
+`$form->file('file', 'required')`
+`$form->email('email', required , 4)` //email
+
+`$form->select('titolo', array(), required , 2)` //select
+['titolo'], [array], ['required' -o- 'null'], [lunghezza: es 4]
+
+`$form->textarea('testo', required)` //textarea
+
+// disponibile solo per -- new Form('row')`;--
+`$form->row()` // apre la riga
+     `$form->input('nome', 'required')` //input text
+`$form->rowclose()` // chiude la riga
+
+`$form->button('Salva', 'success')` // button
+
+`$form->close()` // chiude il form
+
+
 ## Security Vulnerabilities
 
 Please review [our security policy](https://github.com/badore/contabi_form/security/policy) on how to report security vulnerabilities.
