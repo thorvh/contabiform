@@ -81,9 +81,9 @@ Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 ```bash
 $form->row() // start row
      $form->input('address', 'required', 3) 
-	 $form->inputData('date', null, 1) 
-	 $form->inputMoney('amount', null, 1) 
-	 $form->select('cities', array(), required , 2) 
+     $form->inputData('date', null, 1) 
+     $form->inputMoney('amount', null, 1) 
+     $form->select('cities', array(), required , 2) 
 $form->rowclose() // close row
 ```
 
