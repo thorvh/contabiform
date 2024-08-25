@@ -51,7 +51,8 @@ View
 
 ### Methods
 
-Start the form
+*Start the form
+
 `$form->open('POST','route')`      `$form->open('GET','route')`   
 
 `$form->input('nome', 'required', 4)`      //input text
