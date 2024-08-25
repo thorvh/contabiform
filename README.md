@@ -51,13 +51,13 @@ View
 
 ### Methods
 ##### Start the form
-`$form->open('POST','route')`      `$form->open('GET','route')`    
+`$form->open('POST','doctors.store')`      `$form->open('GET','doctors.store')`    
 
 ##### Input text
 `$form->input('title', 'required', 4)`      
 Params: ['title'] (also included for `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
 
-##### input Date (bootstrap datepicker)
+##### input Date (require bootstrap datepicker)
 `$form->inputData('data', null, 1)` 
 
 ##### input money (number)
@@ -78,8 +78,11 @@ Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 
 ##### Form row example
 `new Form('row')`
+
 `$form->row()` // start row
+
      `$form->input('address', 'required', 3)` 
+	 
 `$form->rowclose()` // close row
 
 #####  Button
