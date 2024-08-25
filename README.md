@@ -51,44 +51,42 @@ View
 
 ### Methods
 ##### Start the form
-
 `$form->open('POST','route')`      `$form->open('GET','route')`    
 
-###### Input text
-
+##### Input text
 `$form->input('title', 'required', 4)`      
-Params: ['title'] (also `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
+Params: ['title'] (also included for `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
 
-*input Date (bootstrap datepicker)
+##### input Date (bootstrap datepicker)
 `$form->inputData('data', null, 1)` 
 
-*input money (number)
+##### input money (number)
 `$form->inputMoney('importo', null, 1)` //money es: 125,00
 
-*input file
+##### input file
 `$form->file('file', 'required')`
 
-*input email
+##### input email
 `$form->email('email', required , 4)` 
 
-*input select
+##### input select
 `$form->select('titolo', array(), required , 2)` //select
 Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 
-*input
+##### input
 `$form->textarea('testo', required)` 
 
-*Form row example
+##### Form row example
 `new Form('row')`
 `$form->row()` // start row
      `$form->input('address', 'required', 3)` 
 `$form->rowclose()` // close row
 
-* Button
+#####  Button
 `$form->button('Save', 'success')` 
 Params: ['title'], ['bootstrap color: success, info, warning, danger, dark, light']
 
-*Form close
+##### Form close
 `$form->close()` 
 
 
