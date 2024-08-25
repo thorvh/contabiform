@@ -50,32 +50,44 @@ View
 `$form->open('POST','route')`
 
 ### Methods
-
 *Start the form
+`$form->open('POST','route')`      `$form->open('GET','route')`    
 
-`$form->open('POST','route')`      `$form->open('GET','route')`   
+*Input text
+`$form->input('title', 'required', 4)`      
+Params: ['title'] (also `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
 
-`$form->input('nome', 'required', 4)`      //input text
-per tutti i campi input i valori sono: ['titolo'], ['required' -o- 'null'], [lunghezza: es 4]
+*input Date (bootstrap datepicker)
+`$form->inputData('data', null, 1)` 
 
-`$form->inputData('data', null, 1)` //data con bootstrap datepicker
+*input money (number)
 `$form->inputMoney('importo', null, 1)` //money es: 125,00
+
+*input file
 `$form->file('file', 'required')`
-`$form->email('email', required , 4)` //email
 
+*input email
+`$form->email('email', required , 4)` 
+
+*input select
 `$form->select('titolo', array(), required , 2)` //select
-['titolo'], [array], ['required' -o- 'null'], [lunghezza: es 4]
+Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 
-`$form->textarea('testo', required)` //textarea
+*input
+`$form->textarea('testo', required)` 
 
-// disponibile solo per -- new Form('row')`;--
-`$form->row()` // apre la riga
-     `$form->input('nome', 'required')` //input text
-`$form->rowclose()` // chiude la riga
+*Form row example
+`new Form('row')`
+`$form->row()` // start row
+     `$form->input('address', 'required', 3)` 
+`$form->rowclose()` // close row
 
-`$form->button('Salva', 'success')` // button
+* Button
+`$form->button('Save', 'success')` 
+Params: ['title'], ['bootstrap color: success, info, warning, danger, dark, light']
 
-`$form->close()` // chiude il form
+*Form close
+`$form->close()` 
 
 
 ## Security Vulnerabilities
