@@ -46,13 +46,29 @@ class DoctorController extends Controller
 
 ```bash
 {{  $form->open('POST','doctors.store')  }}
-     {{  $form->input('name', 'required', 3)  }} 
-	 {{  $form->input('address', null, 4)  }} 
-	 {{  $form->inputData('date', null, 1)  }} 
-	 {{  $form->inputMoney('amount', null, 1)  }} 
-	 {{  $form->select('city', $cities_array, required , 2)  }} 
-	 {{  $form->button('Save', 'success')  }}
+
+{{  $form->input('name', 'required', 3)  }} 
+{{  $form->input('address', null, 4)  }} 
+{{  $form->inputData('date', null, 1)  }} 
+{{  $form->inputMoney('amount', null, 1)  }} 
+{{  $form->select('city', $cities_array, required , 2)  }} 
+{{  $form->button('Save', 'success')  }}
+
 {{  $form->close()  }} 
+```
+
+
+##### Form row example
+
+```bash
+{{  $form->row() // start row
+
+{{  $form->input('address', 'required', 3)  }} 
+{{  $form->inputData('date', null, 1)  }} 
+{{  $form->inputMoney('amount', null, 1)  }} 
+{{  $form->select('city', $cities_array, required , 2)  }} 
+
+{{  $form->rowclose()  }} // close row
 ```
 
 Select your form `new ContabiForm('horizontal')` 
@@ -90,16 +106,6 @@ Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 ##### input
 `{{  $form->textarea('testo', required)  }}` 
 
-##### Form row example
-
-```bash
-{{  $form->row() // start row
-     {{  $form->input('address', 'required', 3)  }} 
-	 {{  $form->inputData('date', null, 1)  }} 
-	 {{  $form->inputMoney('amount', null, 1)  }} 
-	 {{  $form->select('city', $cities_array, required , 2)  }} 
-{{  $form->rowclose()  }} // close row
-```
 
 #####  Button
 `{{  $form->button('Save', 'success')  }}` 
