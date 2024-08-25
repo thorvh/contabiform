@@ -42,6 +42,19 @@ class DoctorController extends Controller
 	}
 ```
 
+##### Form View example
+
+```bash
+$form->open('POST','doctors.store')
+     $form->input('name', 'required', 3) 
+	 $form->input('address', null, 4) 
+	 $form->inputData('date', null, 1) 
+	 $form->inputMoney('amount', null, 1) 
+	 $form->select('city', array(), required , 2) 
+	 $form->button('Save', 'success')
+$form->close() 
+```
+
 Select your form `new ContabiForm('horizontal')` 
 `new ContabiForm('inline')`
 `new ContabiForm('row')`
@@ -50,7 +63,7 @@ View
 `$form->open('POST','route')`
 
 ### Methods
-##### Start the form
+##### Start the form in your blade view file
 `$form->open('POST','doctors.store')`      `$form->open('GET','doctors.store')`    
 
 ##### Input text
