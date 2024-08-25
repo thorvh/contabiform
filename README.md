@@ -70,7 +70,8 @@ Params: ['title'] (also included for `name` and `id`, ['required' -or- 'null'], 
 `$form->email('email', required , 4)` 
 
 ##### input select
-`$form->select('titolo', array(), required , 2)` //select
+`$form->select('titolo', array(), required , 2)` 
+
 Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 
 ##### input
@@ -81,24 +82,18 @@ Params: ['title'], [array values], ['required' -o- 'null'], [lenght: es 4]
 ```bash
 $form->row() // start row
      $form->input('address', 'required', 3) 
-     $form->inputData('date', null, 1) 
-     $form->inputMoney('amount', null, 1) 
-     $form->select('cities', array(), required , 2) 
+	 $form->inputData('date', null, 1) 
+	 $form->inputMoney('amount', null, 1) 
+	 $form->select('cities', array(), required , 2) 
 $form->rowclose() // close row
 ```
 
 #####  Button
 `$form->button('Save', 'success')` 
+
 Params: ['title'], ['bootstrap color: success, info, warning, danger, dark, light']
 
 ##### Form close
 `$form->close()` 
 
 
-## Security Vulnerabilities
-
-Please review [our security policy](https://github.com/badore/contabi_form/security/policy) on how to report security vulnerabilities.
-
-## License
-
-Laravel UI is open-sourced software licensed under the [MIT license](LICENSE.md).
