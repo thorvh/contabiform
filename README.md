@@ -51,9 +51,11 @@ View
 
 ### Methods
 *Start the form
+
 `$form->open('POST','route')`      `$form->open('GET','route')`    
 
 *Input text
+
 `$form->input('title', 'required', 4)`      
 Params: ['title'] (also `name` and `id`, ['required' -or- 'null'], [lenght: es 4]
 
