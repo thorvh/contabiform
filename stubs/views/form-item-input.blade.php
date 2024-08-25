@@ -1,2 +1,2 @@
-<label>{{ucwords($input)}}</label>
-<input class="form-control"  type="text" id="{{$input}}" name="{{$input}}" {{$required}}>
+<label>{{ucwords($item)}}</label>
+<input class="form-control"  type="text" id="{{$item}}" name="{{$item}}" value="{{$value}}"  {{$required}}>
